@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'Docker Containers'
+    static_configs:
+      - targets: ['cadvisor:8080']
+      
+  - job_name: 'PostgreSQL Exporter'
+    static_configs:
+      - targets: ['postgres-exporter:9187']
+
+  - job_name: 'Main API'
+    static_configs:
+      - targets: ['main-api:8000']
